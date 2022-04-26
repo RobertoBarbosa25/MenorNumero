@@ -12,7 +12,7 @@ public class Array {
 
         for (int i = 0; i < 10; i++) {
 
-            System.out.println("Informe um número inteiro: ");
+            System.out.println("Informe um número: ");
             valores[i] = scan.nextInt();
 
             if (menor == 0 && i == 0){
@@ -35,10 +35,10 @@ public class Array {
             }
         }
 
-        System.out.println(menor);
-        System.out.println(maior);
-        System.out.println(soma);
-        System.out.println(pares);
+        System.out.println("O menor número é: "+menor);
+        System.out.println("O maior numero é: "+maior);
+        System.out.println("A Soma de  todos os numero: "+soma);
+        System.out.println("A Soma de todos os pares: "+pares);
 
     }
 }

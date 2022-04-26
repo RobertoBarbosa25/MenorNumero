@@ -11,14 +11,14 @@ public class Main {
         int numHomem = 0;
         int numMulher = 0;
         Double total = 0.0;
-        int numBin = 0;
+        int naoDef = 0;
 
         for (int i = 0; i < 10; i++) {
 
             Pessoa pessoa = new Pessoa();
-            System.out.println("Informe a altura da pessoa " +(i+1)+ ": ");
+            System.out.println("Informe a Altura " +(i+1)+ ": ");
             pessoa.setAltura(scan.nextDouble());
-            System.out.println("Informe o sexo da pessoa (m ou f) " +(i+1)+ ": ");
+            System.out.println("Informe o Sexo (m ou f) " +(i+1)+ ": ");
             pessoa.setSexo(scan.next().charAt(0));
             pessoas[i] = pessoa;
 
@@ -39,24 +39,24 @@ public class Main {
                 total += pessoas[i].getAltura();
                 numHomem++;
             }
-            else if (pessoas[i].getSexo() == 'f' || pessoas[i].getSexo() == 'F' ){
+            else
+                if (pessoas[i].getSexo() == 'f' || pessoas[i].getSexo() == 'F' ){
                 numMulher++;
             }
             else{
-                System.out.println("Ser não binario");
-                numBin++;
+                System.out.println("Sexo não inserido!");
+                naoDef++;
             }
 
         }
         media = (total/numHomem);
 
 
-        System.out.println("o sexo da primeira pessoa é: " +pessoas[0].getSexo());
-        System.out.println("A altura da primeira pessoa é: " +pessoas[0].getAltura());
+
         System.out.println("A maior altura do grupo é: " +maior);
         System.out.println("A menor altura do grupo é: " +menor);
         System.out.println("A media da altura dos homens é: " +media);
         System.out.println("O total de mulheres é: " +numMulher);
-        System.out.println("Existe(m) " +numBin+ "não binario(s)!");
+        System.out.println("Existe(m) " +naoDef+ " sexo não informado(s)!");
     }
 }
