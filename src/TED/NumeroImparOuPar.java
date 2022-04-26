@@ -1,29 +1,46 @@
 package TED;
 import java.util.Scanner;
+import java.util.Arrays;
 public class NumeroImparOuPar {
-    public static void main(String[] args){
-        int contador = 0;
-        int totalImpar = 0;
-        int totalPar = 0;
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] valores = new int[4];
+        int x = 0;
+        int y = 0;
 
+        for (int i = 0; i < 4; i++) {
 
-        Scanner scn = new Scanner(System.in);
-        while(contador < 5){
-            System.out.println("Digite um numero: " +contador);
-            int numero = scn.nextInt();
-            contador++;
+            System.out.println("Informe um número inteiro: ");
+            valores[i] = scan.nextInt();
+            if (valores[i] % 2 == 0){
+                x++;
+            }
+            else{
+                y++;
+            }
+        }
 
-            if(numero % 2 == 0){
-                System.out.println("O Numero digitado é PAR");
-                totalPar++;
+        int[] pares = new int[x];
+        int[] impares = new int[y];
+        x=0;
+        y=0;
+        for (int i = 0; i < 4; i++) {
 
-            }else{
-                System.out.println("O Numero digitado é IMPAR");
-                totalImpar++;
+            if (valores[i] % 2 == 0){
+                pares[x]= valores[i];
+                x++;
+            }
+            else{
+                impares[y]= valores[i];
+                y++;
             }
 
         }
-        System.out.println("O número total de número impares são: "+totalImpar);
-        System.out.println("O número total de número pares são: "+totalPar);
+
+        System.out.println("Foram digitados os seguintes numeros pares: "+Arrays.toString(pares));
+        System.out.println("Foram digitados os seguintes numeros impares: "+Arrays.toString(impares));
+        System.out.println("foram " +y+ " numeros impares.");
+        System.out.println("foram " +x+ " numeros pares.");
     }
+
 }
